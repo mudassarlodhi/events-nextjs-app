@@ -106,12 +106,19 @@ function FilteredEventsPage({ firebaseURI }) {
 
 export default FilteredEventsPage;
 
-export async function getServerSideProps(){
+export async function getStaticProps(){
    return {
      props: {
        firebaseURI: firebaseURI
      }
    } 
+}
+
+export async function getStaticPaths(){
+  return {
+    paths: [],
+    fallback:true
+  }
 }
 
 // export async function getServerSideProps(context) {
